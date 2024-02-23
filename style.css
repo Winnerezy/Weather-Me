@@ -7,6 +7,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
 }
 
 #title{
@@ -40,7 +41,6 @@ body{
 
 #temp{
     color: white;
-    font-size: 5rem;
     position: relative;
     bottom: 150px;
     margin: 0;
@@ -83,11 +83,17 @@ body{
     text-align: center;
 }
 
+#weatherImg{
+    position: absolute;
+    right: 10px;
+    width: 100px;
+}
+
 #info{
     display: grid;
     grid-template-columns: 300px 300px 300px;
     position: relative;
-    left: 45%;
+    left: 59%;
     top: 500px;
     gap: 50px;
     transform: translate(-50%);
@@ -99,13 +105,33 @@ body{
     width: 300px;
     height: 100px;
     border-radius: 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+#wind >p{
+    position: absolute;
+    top: 0;
+}
+#windA{
+    position: absolute;
+    height: 20px;
+    background-color: #d8f4ff;
+    left: 35px;
+    align-items: center;
+    justify-content: baseline;
+}
+
+#windText{
+    position: absolute;
+    bottom: 0;
+}
 #seaLevel{
     background-color: #87CEEB;
     width: 300px;
     height: 100px;
-    border-radius: 5px;
 }
 
 #humidity{
