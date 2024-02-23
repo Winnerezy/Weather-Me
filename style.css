@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body{
+    position: relative;
+    display: grid;
+    font-family: 'Roboto';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#title{
+    text-align: center;
+}
+
+#container{
+    display: grid;
+    grid-template-columns: 300px auto;
+    height: 700px;
+}
+
+#sideBar{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-color: #B0C4DE;
+
+}
+
+#sideBar >div{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50px;
+    left: 40px;
+    
+}
+
+#temp{
+    color: white;
+    font-size: 5rem;
+    position: relative;
+    bottom: 150px;
+    margin: 0;
+}
+
+#search{
+    position: absolute;
+    top: 10px;
+    flex: 1;
+    border-radius: 5px;
+    outline:none;
+}
+
+#find{
+    position: absolute;
+    top: 10px;
+    left: 180px;
+    background-color: white;
+}
+
+#main{
+    display: grid;
+    grid-template-columns: auto auto;
+    position: relative;
+    background-color: #F0F8FF;
+    width: 1200px;
+    border-radius: 10px 0 0 10px;
+}
+
+#weather{
+    position: absolute;
+    background-color:  #6495ED;
+    left: 100px;
+    right: 100px;
+    top: 20%;
+    height: 200px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#info{
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    position: relative;
+    left: 45%;
+    top: 500px;
+    gap: 50px;
+    transform: translate(-50%);
+    height: max-content;
+}
+
+#wind{
+    background-color: #87CEEB;
+    width: 300px;
+    height: 100px;
+    border-radius: 5px;
+}
+
+#seaLevel{
+    background-color: #87CEEB;
+    width: 300px;
+    height: 100px;
+    border-radius: 5px;
+}
+
+#humidity{
+    background-color: #87CEEB;
+    width: 300px;
+    height: 100px;
+    border-radius: 5px;
+}
