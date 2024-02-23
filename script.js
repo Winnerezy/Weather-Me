@@ -4,6 +4,7 @@ const temp = document.getElementById('temp');
 const weatherImg = document.getElementById('weatherImg');
 const city = document.getElementById('city');
 const windA = document.getElementById('windA');
+const humidityA = document.getElementById('humidityA');
 
 find.addEventListener('click', async()=> {
     //get the value of the location that will be seent to the server
@@ -31,6 +32,7 @@ try {
 	temp.innerHTML =  result.temperature.current + "<sup>°c</sup>";
 	temp.style.fontSize = '5rem'
 	city.textContent = result.location
+
 	/*
 	//changes the image due to the insight reading
 	switch(result.data.current_weather){
@@ -50,25 +52,77 @@ function windAnimate(){
 	if(speed <= speedApi ){ //if the initial speed is less or equal to the api speed the animation works
 		windA.style.width = speed + "px"
 	}
-	document.getElementById("windtext").textContent = result.wind.speed;
+	document.getElementById("windText").textContent = result.wind.speed;
 	requestAnimationFrame(windAnimate); //looping the animation
-	//position += 10;
-//speed = result.wind.speed + speed;
 
 }
 
 
 windAnimate()
 }
+
+let humidityApi = (result.humidity)
+let humidity = 0;
+function humidityAnimate(){
+humidity += 1;
+if(humidity <= humidityApi){ //if the initial speed is less or equal to the api speed the animation works
+	humidityA.style.width = humidity + "px"
+}
+document.getElementById("humidityText").textContent = result.humidity;
+requestAnimationFrame(humidityAnimate); //looping the animation
+//position += 10;
+//speed = result.wind.speed + speed;
+
+}
+
+
+humidityAnimate()
+}
 	
 
-} 
 catch (error) {
 	console.error('Error:', error);
 } 
 })
 
+const hour = document.getElementById('hour');
+const minute = document.getElementById('minute');
+const second = document.getElementById('second');
+const amPM = document.getElementById('amPM');
 
+//adding a clock to the UI
+function time(){
+const today = new Date();
 
-	
-	
+const hourE = today.getHours();
+const minuteE = today.getMinutes();
+const secondE = today.getSeconds();
+
+hour.textContent = hourT(hourE);
+minute.textContent = padZero(minuteE);
+second.textContent = padZero(secondE);
+AP(hourE)
+}
+interval = setInterval(time, 1000);
+time()
+
+//changing to 12-digit time
+function hourT(hourE){
+	return hourE > 13? hourE - 12 : hourE;
+}
+
+//addin "0" to the beginning of < 10 numbers
+function padZero(value){
+	return value < 10? "0" + value : value;
+}
+
+//adding AM and PM to the time
+function AP(hourE){
+	if(hourE > 12){
+		amPM.textContent = 'PM'
+	}
+	else {
+		amPM.textContent = 'AM'
+	}
+}
+
