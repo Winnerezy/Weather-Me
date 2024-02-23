@@ -5,12 +5,16 @@ const weatherImg = document.getElementById('weatherImg');
 const city = document.getElementById('city');
 const windA = document.getElementById('windA');
 const humidityA = document.getElementById('humidityA');
+const main = document.getElementById('main');
 
 find.addEventListener('click', async()=> {
     //get the value of the location that will be seent to the server
     const location = search.value;
 	search.value = "";
 
+	if(search.value = ""){
+		return;
+	}
 	const url = `https://weatherx.p.rapidapi.com/weather/v1.0/current?location=${location}`;
 const options = {
 	method: 'GET',
@@ -120,6 +124,7 @@ function padZero(value){
 function AP(hourE){
 	if(hourE > 12){
 		amPM.textContent = 'PM'
+		//main.style.backgroundColor = "#3a5772"
 	}
 	else {
 		amPM.textContent = 'AM'

@@ -23,6 +23,7 @@ body{
     align-items: center;
     justify-content: center;
     background-color: #B0C4DE;
+    border-radius: 10px;
 
 }
 
@@ -47,6 +48,7 @@ body{
     flex: 1;
     border-radius: 5px;
     outline:none;
+    border: none;
 }
 
 #find{
