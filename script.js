@@ -26,7 +26,7 @@ find.addEventListener('click', async()=> {
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '21ed8aea1bmshe75ea1d8431ff22p18b244jsn0b0eb90eee3a',
+		'X-RapidAPI-Key': 'YOUR_API_KEY',
 		'X-RapidAPI-Host': 'weatherx.p.rapidapi.com'
 	}
 };
