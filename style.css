@@ -4,7 +4,6 @@ body{
     position: relative;
     display: grid;
     font-family: 'Roboto';
-    display: flex;
     align-items: center;
     justify-content: center;
     color: white;
@@ -12,8 +11,10 @@ body{
 
 #container{
     display: grid;
-    grid-template-columns: 300px auto;
-    height: 700px;
+    grid-template-columns: 300px 1fr;
+    height: 640px;
+    width: max-content;
+    padding: 10px;
 }
 
 #sideBar{
@@ -22,9 +23,9 @@ body{
     position: relative;
     align-items: center;
     justify-content: center;
-    background-color: #B0C4DE;
+    background-color: #add8e6;
     border-radius: 10px;
-
+    backdrop-filter: blur(10px);
 }
 
 #sideBar >div{
@@ -64,28 +65,27 @@ body{
     display: grid;
     grid-template-columns: auto auto;
     position: relative;
-    background-color: #F0F8FF;
+    background-color: #ffffcc;
     width: 1200px;
     border-radius: 10px 0 0 10px;
 }
 
 #weather{
     position: absolute;
-    background-color:  #6495ED;
-    left: 100px;
-    right: 100px;
-    top: 20%;
-    height: 200px;
-    border-radius: 5px;
+    background-color:  #73a4ff;
+    backdrop-filter: blur(10px);
+    left: 900px;
+    top: 10%;
+    height: 100px;
+    width: 200px;
+    border-radius: 0 50px 0 50px;
     text-align: center;
 }
 
 #city{
-    margin: 0;
-    position: relative;
-    top: 20px;
     font-size: 30px;
     text-decoration: underline;
+    text-align: center;
 }
 
 #weatherImg{
@@ -96,9 +96,9 @@ body{
 
 #display{
     position: absolute;
-    top: 50px;
-    left: 360px;
-    font-size: 5rem;
+    top: 35px;
+    right: 15px;
+    font-size: 2rem;
 }
 
 #weather >span{
@@ -107,15 +107,15 @@ body{
 
 #amPM{
     margin-left: 5px;
-    font-size: 50px;
+    font-size: 30px;
     vertical-align: top;
 }
 
 #info{
     display: grid;
     grid-template-columns: 300px 300px 300px;
-    position: relative;
-    left: 59%;
+    position: absolute;
+    left: 50%;
     top: 500px;
     gap: 50px;
     transform: translate(-50%);
@@ -131,6 +131,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 20px 50px;
 }
 
 #wind >p{
@@ -147,10 +148,16 @@ body{
     justify-content: baseline;
 }
 
+#windText{
+    position: relative;
+    margin-top: 70px;
+}
+
 #seaLevel{
     background-color: #87CEEB;
     width: 300px;
     height: 100px;
+    border-radius: 20px 50px;
 }
 
 #humidity{
@@ -163,6 +170,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    row-gap: 100px;
+    border-radius: 20px 50px;
 }
 
 #humidity >p{
@@ -180,6 +189,6 @@ body{
 }
 
 #humidityText{
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    margin-top: 70px;
 }

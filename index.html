@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeatherMe</title>
+    <title>Weather Me</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section id="container">
+    <div id="container">
         <aside id="sideBar">
             <div>
                 <input type="text" id="search">
@@ -17,9 +17,9 @@
             <p id="temp"></p>
         </aside>
         <main id="main">
+            <img id="weatherImg">
+            <p id="city"></p>
             <section id="weather">
-                <img id="weatherImg">
-                <p id="city"></p>
                 <div id="display">
                     <span id="hour"></span><span>:</span><span id="minute"></span><span>:</span><span id="second"></span><span id="amPM"></span>
                 </div>
@@ -40,7 +40,7 @@
                 </div>
             </section>
         </main>
-    </section>
+    </div>
     
     <script src="script.js"></script>
 </body>

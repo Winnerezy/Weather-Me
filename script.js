@@ -7,6 +7,13 @@ const windA = document.getElementById('windA');
 const humidityA = document.getElementById('humidityA');
 const main = document.getElementById('main');
 
+search.addEventListener('keydown', (e)=>{
+	if(e.key === 'Enter'){
+	e.preventDefault();
+	find.click();
+	}
+});
+
 find.addEventListener('click', async()=> {
     //get the value of the location that will be seent to the server
     const location = search.value;
@@ -56,7 +63,7 @@ function windAnimate(){
 	if(speed <= speedApi ){ //if the initial speed is less or equal to the api speed the animation works
 		windA.style.width = speed + "px"
 	}
-	document.getElementById("windText").textContent = result.wind.speed;
+	document.getElementById("windText").innerHTML = result.wind.speed;
 	requestAnimationFrame(windAnimate); //looping the animation
 
 }
@@ -72,7 +79,7 @@ humidity += 1;
 if(humidity <= humidityApi){ //if the initial speed is less or equal to the api speed the animation works
 	humidityA.style.width = humidity + "px"
 }
-document.getElementById("humidityText").textContent = result.humidity;
+document.getElementById("humidityText").innerHTML = result.humidity;
 requestAnimationFrame(humidityAnimate); //looping the animation
 //position += 10;
 //speed = result.wind.speed + speed;
